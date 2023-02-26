@@ -12,6 +12,19 @@ steps:
 	
 	
 		1. What is the total amount each customer spent at the restaurant?
+			<details>
+			<summary>total amount each customer spent</summary>
+			<pre>		
+			select s.customer_id, SUM(m.price) as total_spend
+			from sales_dannys s
+			join menu_dannys m
+			on s.product_id = m.product_id
+			group by s.customer_id;		
+			</pre>
+			<img src="https://github.com/mas-tono/japanese-restaurant/blob/main/image/1.%20total%20amount%20each%20customer%20spent.jpg">
+			</details>
+
+		
 		2. How many days has each customer visited the restaurant?
 		3. What was the first item from the menu purchased by each customer?
 		4. What is the most purchased item on the menu and how many times was it purchased by all customers?
